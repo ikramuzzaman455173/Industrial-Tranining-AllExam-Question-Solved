@@ -1,75 +1,257 @@
+/* All Most Common And Most UseFull Javascript Data typeof() Method Find:) */
+// Check the data type of a string
+console.log(typeof 'Hello Javascript'); // Output: 'string'
+
+// Check the data type of a number
+console.log(typeof 20); // Output: 'number'
+
+// Check the data type of a boolean
+console.log(typeof true); // Output: 'boolean'
+
+// Check the data type of an empty object
+console.log(typeof {}); // Output: 'object'
+
+// Check the data type of an empty array (also an object)
+console.log(typeof []); // Output: 'object'
+
+// Check the data type of null (typeof null returns 'object' due to a historical quirk)
+console.log(typeof null); // Output: 'object'
+
+// Check the data type of undefined (represents the absence of a value)
+console.log(typeof undefined); // Output: 'undefined'
+
+// Check the data type of NaN (typeof NaN returns 'number' due to a quirk)
+console.log(typeof NaN); // Output: 'number'
+
+// Check the data type of the isNaN function
+console.log(typeof isNaN); // Output: 'function'
+
+// Check the data type of a function
+function exampleFunction() {}
+console.log(typeof exampleFunction); // Output: 'function'
+
+// Check the data type of an arrow function
+const arrowFunction = () => {};
+console.log(typeof arrowFunction); // Output: 'function'
+
+// Check the data type of a date object
+const currentDates = new Date();
+console.log(typeof currentDates); // Output: 'object'
+
+// Check the data type of a regular expression
+const regexPattern = /[a-z]/;
+console.log(typeof regexPattern); // Output: 'object'
+
+// Check the data type of an error object
+const errorObject = new Error('This is an error.');
+console.log(typeof errorObject); // Output: 'object'
+
+// Check the data type of a custom object
+const customObject = { name: 'John', age: 30 };
+console.log(typeof customObject); // Output: 'object'
+
+// Check the data type of a symbol
+const mySymbol = Symbol('description');
+console.log(typeof mySymbol); // Output: 'symbol'
+
+// Check the data type of a BigInt
+const bigIntValue = 1234567890123456789012345678901234567890n;
+console.log(typeof bigIntValue); // Output: 'bigint'
+
+// Check the data type of a Map
+const myMap = new Map();
+console.log(typeof myMap); // Output: 'object'
+
+// Check the data type of a Set
+const mySet = new Set();
+console.log(typeof mySet); // Output: 'object'
+
+/* Some Data Types Related Most Common & Usefull Examples:) */
+
+// 10 + '20'
+// Topic: Addition with a string converts the number to a string and concatenates them.
+
+const result1 = 10 + '20';
+console.log(result1); // Output: "1020"
+
+// 9 - '5'
+// Topic: Subtraction with a string converts the string to a number and performs subtraction.
+
+const result2 = 9 - '5';
+console.log(result2); // Output: 4
+
+// "Java" + "script"
+// Topic: The + operator with two strings performs string concatenation.
+
+const result3 = "Java" + "script";
+console.log(result3); // Output: "Javascript"
+
+// "" + ""
+// Topic: Concatenating two empty strings results in an empty string.
+
+const result4 = "" + "";
+console.log(result4); // Output: ""
+
+// "" + 0
+// Topic: Concatenating an empty string with a number converts the number to a string.
+
+const result5 = "" + 0;
+console.log(result5); // Output: "0"
+
+// "vinod" - "thapa"
+// Topic: The - operator is not defined for strings, so this operation results in NaN (Not-a-Number).
+
+const result6 = "vinod" - "thapa";
+console.log(result6); // Output: NaN
+
+// true + true
+// Topic: true is equivalent to 1, so adding two true values results in 2.
+
+const result7 = true + true;
+console.log(result7); // Output: 2
+
+// true + false
+// Topic: true is equivalent to 1, and false is equivalent to 0, so adding them results in 1.
+
+const result8 = true + false;
+console.log(result8); // Output: 1
+
+// false + true
+// Topic: false is equivalent to 0, and true is equivalent to 1, so adding them results in 1.
+
+const result9 = false + true;
+console.log(result9); // Output: 1
+
+// false - true
+// Topic: Subtraction is performed, so false is equivalent to 0, true is equivalent to 1, and the result is -1.
+
+const result10 = false - true;
+console.log(result10); // Output: -1
+
+
+
 /* All Most Common And Most UseFull Javascript String Method:) */
 
-//! String Length
+//! String length
+// Topic: Returns the number of characters in a string.
+
 const text = "Hello, World!";
-const length = text.length; // Returns the length of the string (13 in this case).
+const length = text.length;
+console.log(length); // Output: 13
 
-//! String Slice
-const sliced = text.slice(7, 12); // Extracts a portion of the string (from index 7 to 11) - "World".
-console.log(sliced); // Output: "World"
+//! String slice()
+// Topic: Extracts a portion of a string and returns it as a new string.
 
-//! String Substring
-const substring = text.substring(7, 12); // Similar to slice, extracts a substring - "World".
-console.log(substring); // Output: "World"
+const str1 = "Hello, World!";
+const slicedStr = str1.slice(0, 5); // Slices from index 0 to 4
+console.log(slicedStr); // Output: "Hello"
 
-//! String Substr
-const substr = text.substr(7, 5); // Extracts a substring starting at index 7 with a length of 5 - "World".
-console.log(substr); // Output: "World"
+//! String substring()
+// Topic: Similar to slice but can't accept negative indexes.
 
-//! String Replace
-const replaced = text.replace("World", "JavaScript"); // Replaces the first occurrence of "World" with "JavaScript" - "Hello, JavaScript!".
-console.log(replaced); // Output: "Hello, JavaScript!"
+const str2 = "Hello, World!";
+const subStr = str2.substring(6, 11); // Extracts from index 6 to 10
+console.log(subStr); // Output: "World"
 
-//! String ReplaceAll (requires JavaScript ES2021+)
-const replacedAll = text.replaceAll("l", "X"); // Replaces all occurrences of "l" with "X" - "HeXXo, WorXd!".
-console.log(replacedAll); // Output: "HeXXo, WorXd!"
+//! String substr()
+// Topic: Extracts a specified number of characters from a string, starting at a specified index.
 
-//! String toUpperCase
-const upperCase = text.toUpperCase(); // Converts the string to uppercase - "HELLO, WORLD!".
-console.log(upperCase); // Output: "HELLO, WORLD!"
+const str3 = "Hello, World!";
+const subStr2 = str3.substr(7, 5); // Extracts 5 characters starting from index 7
+console.log(subStr2); // Output: "World"
 
-//! String toLowerCase
-const lowerCase = text.toLowerCase(); // Converts the string to lowercase - "hello, world!".
-console.log(lowerCase); // Output: "hello, world!"
+//! String replace()
+// Topic: Searches a string for a specified value and replaces the first occurrence with another value.
 
-//! String Concatenation
-const str1 = "Hello";
-const str2 = "World";
-const concatenated = str1.concat(", ", str2); // Concatenates two strings with a separator - "Hello, World!".
-console.log(concatenated); // Output: "Hello, World!"
+const str4 = "Hello, World!";
+const replacedStr = str4.replace("World", "Universe");
+console.log(replacedStr); // Output: "Hello, Universe!"
 
-//! String Trim
-const spacedText = "   Hello, World!   ";
-const trimmed = spacedText.trim(); // Removes leading and trailing whitespace - "Hello, World!".
-console.log(trimmed); // Output: "Hello, World!"
+//! String replaceAll()
+// Topic: Replaces all occurrences of a specified value in a string.
 
-//! String TrimStart
-const trimStart = spacedText.trimStart(); // Removes leading whitespace - "Hello, World!   ".
-console.log(trimStart); // Output: "Hello, World!   "
+const str5 = "Hello, World!";
+const replacedStr2 = str5.replaceAll("o", "0");
+console.log(replacedStr2); // Output: "Hell0, W0rld!"
 
-//! String TrimEnd
-const trimEnd = spacedText.trimEnd(); // Removes trailing whitespace - "   Hello, World!".
-console.log(trimEnd); // Output: "   Hello, World!"
+//! String toUpperCase()
+// Topic: Converts a string to uppercase.
 
-//! String PadStart
-const paddedStart = text.padStart(15, " "); // Pads the string from the start with spaces to a length of 15 - "   Hello, World!".
-console.log(paddedStart); // Output: "   Hello, World!"
+const str6 = "Hello, World!";
+const upperStr = str6.toUpperCase();
+console.log(upperStr); // Output: "HELLO, WORLD!"
 
-//! String PadEnd
-const paddedEnd = text.padEnd(15, "*"); // Pads the string from the end with asterisks to a length of 15 - "Hello, World!***".
-console.log(paddedEnd); // Output: "Hello, World!***"
+//! String toLowerCase()
+// Topic: Converts a string to lowercase.
 
-//! String CharAt
-const char = text.charAt(7); // Returns the character at index 7 - "W".
+const str7 = "Hello, World!";
+const lowerStr = str7.toLowerCase();
+console.log(lowerStr); // Output: "hello, world!"
+
+//! String concat()
+// Topic: Combines two or more strings and returns a new string.
+
+const str8 = "Hello,";
+const str9 = " World!";
+const concatStr = str8.concat(str9);
+console.log(concatStr); // Output: "Hello, World!"
+
+//! String trim()
+// Topic: Removes whitespace from both ends of a string.
+
+const str10 = "   Hello, World!   ";
+const trimmedStr = str10.trim();
+console.log(trimmedStr); // Output: "Hello, World!"
+
+//! String trimStart()
+// Topic: Removes whitespace from the beginning of a string.
+
+const str11 = "   Hello, World!   ";
+const trimmedStr2 = str11.trimStart();
+console.log(trimmedStr2); // Output: "Hello, World!   "
+
+//! String trimEnd()
+// Topic: Removes whitespace from the end of a string.
+
+const str12 = "   Hello, World!   ";
+const trimmedStr3 = str12.trimEnd();
+console.log(trimmedStr3); // Output: "   Hello, World!"
+
+//! String padStart()
+// Topic: Pads the string with another string until it reaches the specified length.
+
+const str13 = "42";
+const paddedStr = str13.padStart(5, "0");
+console.log(paddedStr); // Output: "00042"
+
+//! String padEnd()
+// Topic: Pads the string with another string until it reaches the specified length.
+
+const str14 = "42";
+const paddedStr2 = str14.padEnd(5, "0");
+console.log(paddedStr2); // Output: "42000"
+
+//! String charAt()
+// Topic: Returns the character at a specified index in a string.
+
+const str15 = "Hello, World!";
+const char = str15.charAt(7); // Get character at index 7
 console.log(char); // Output: "W"
 
-//! String CharCodeAt
-const charCode = text.charCodeAt(7); // Returns the ASCII code of the character at index 7 - 87 (ASCII code for 'W').
+//! String charCodeAt()
+// Topic: Returns the Unicode value of the character at a specified index in a string.
+
+const str16 = "Hello, World!";
+const charCode = str16.charCodeAt(7); // Get Unicode value of character at index 7
 console.log(charCode); // Output: 87
 
-//! String Split
-const words = text.split(", "); // Splits the string into an array using the specified delimiter - ["Hello", "World!"].
-console.log(words); // Output: ["Hello", "World!"]
+//! String split()
+// Topic: Splits a string into an array of substrings based on a specified delimiter.
+
+const str17 = "apple,banana,cherry";
+const fruitsArray = str17.split(",");
+console.log(fruitsArray); // Output: ["apple", "banana", "cherry"]
+
 
 
 /*  Javascript All Common Number Method:) */
@@ -360,3 +542,36 @@ console.log(date); // Output: Thu Jul 25 2024 15:45:20 GMT+0000 (Coordinated Uni
 
 date.setMilliseconds(500); // Set the milliseconds to 500
 console.log(date); // Output: Thu Jul 25 2024 15:45:20 GMT+0000 (Coordinated Universal Time)
+
+
+/*  Javascript All Common Math Method:) */
+
+
+//! Math.round(x)
+// Topic: Returns x rounded to its nearest integer.
+
+const number1 = 3.6;
+const roundedNumber = Math.round(number1);
+console.log(roundedNumber); // Output: 4
+
+//! Math.ceil(x)
+// Topic: Returns x rounded up to its nearest integer.
+
+const number2 = 3.2;
+const ceiledNumber = Math.ceil(number2);
+console.log(ceiledNumber); // Output: 4
+
+//! Math.floor(x)
+// Topic: Returns x rounded down to its nearest integer.
+
+const number3 = 3.8;
+const flooredNumber = Math.floor(number3);
+console.log(flooredNumber); // Output: 3
+
+//! Math.trunc(x)
+// Topic: Returns the integer part of x (new in ES6).
+
+const number4 = 3.9;
+const truncatedNumber = Math.trunc(number4);
+console.log(truncatedNumber); // Output: 3
+
