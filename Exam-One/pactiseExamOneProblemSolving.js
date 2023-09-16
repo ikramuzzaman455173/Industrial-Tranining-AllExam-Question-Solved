@@ -44,7 +44,7 @@ function removeArrayDublicateValue(arr) {
 		arrayObj
 	);
 }
-// removeArrayDublicateValue([3, 4, 5, 4, 5, 3, 2, 2, 2, 2, 3, 1, 4]);
+removeArrayDublicateValue([3, 4, 5, 4, 5, 3, 2, 2, 2, 2, 3, 1, 4]);
 
 /* Q3: Write a JavaScript function that takes a string and returns the string with each word capitalized. */
 function wordCapitalized(str){

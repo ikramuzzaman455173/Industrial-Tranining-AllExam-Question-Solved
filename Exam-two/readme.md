@@ -9,6 +9,7 @@
 - [4. Modify Object Property Dynamically](#4-modify-object-property-dynamically)
 - [5. Find Even Numbers in an Array](#5-find-even-numbers-in-an-array)
 - [6. Sort Array of Objects by Key](#6-sort-array-of-objects-by-key)
+  - [Or Another Method:)](#or-another-method)
 - [7. Merge Sorted Arrays](#7-merge-sorted-arrays)
   - [Or Not Use Built In Function](#or-not-use-built-in-function)
   - [Another Method Fort SortIn And Merged 2 Arrays](#another-method-fort-sortin-and-merged-2-arrays)
@@ -139,20 +140,70 @@ console.log(findAryAllEvenNum(numbers));
 ## 6. Sort Array of Objects by Key
 
 ```javascript
-// Function to sort an array of objects by a key in ascending order
-function sortByKeyAscending(array, key) {
-  return array.sort((a, b) => a[key] - b[key]);
-}
+const sortAry = (ary = [], key) => {
+  if (!Array.isArray(ary)) return 'Function parameter must be an array!';
 
-// Example usage:
+  if (typeof ary[0][key] === 'number') {
+    // Sort numbers
+    return ary.slice().sort((a, b) => a[key] - b[key]);
+  } else if (typeof ary[0][key] === 'string') {
+    // Sort strings
+    return ary.slice().sort((b,a) => a[key].localeCompare(b[key]));
+  } else {
+    return 'Invalid data type for sorting';
+  }
+
+};
+const resultName = sortAry(people,'name');
+const resultAge = sortAry(people, 'age');
+
+// console.log('Sorted by name:', resultName);
+// console.log('Sorted by age:', resultAge);
+```
+
+### Or Another Method:)
+
+```javascript
 const people = [
-  { name: "John", age: 30 },
-  { name: "Alice", age: 25 },
-  { name: "Bob", age: 35 },
+
+    { name: "John", age: 30 },
+
+    { name: "Alice", age: 25 },
+
+    { name: "Bob", age: 35 },
+
 ];
 
-const data = sortByKeyAscending(people, "age");
-console.log(data);
+const sortByKey = (arr, key) => {
+
+    return arr.sort( (a, b) => {
+
+        const valueA = typeof a[key] === 'string' ? a[key].toUpperCase() : a[key];
+
+        const valueB = typeof b[key] === 'string' ? b[key].toUpperCase() : b[key];
+
+        if(valueA > valueB) {
+
+            return 1;
+
+        }
+
+        if(valueA < valueB) {
+
+            return -1;
+
+        }
+
+        return 0
+
+    })
+
+}
+
+const result = sortByKey(people, 'age');
+
+// console.log(result);
+
 ```
 
 ---
