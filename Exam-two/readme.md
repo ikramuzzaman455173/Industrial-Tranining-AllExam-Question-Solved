@@ -305,6 +305,43 @@ function sortByArrTwoArray(arr1, arr2) {
 
 ```
 
+### Proper And Orginal Shorted Merged Array Method:)
+
+```javascript
+// Define two arrays, arr1 and arr2
+const arr1 = [9, 20, 5, 4, 3, 2, 1];
+const arr2 = [6, 7, 8, 9];
+
+// Define a function called mergeSortdArray that takes two arrays, a and b, as input
+function mergeSortdArray(a, b) {
+  // Iterate over each element in array b
+  for (var i = 0; i < b.length; i++) {
+    // Append the current element from b to the end of array a
+    a.push(b[i]);
+  }
+  // Now, we have merged the elements from b into a, but the merged array is not sorted yet
+
+  // Perform a bubble sort to sort the merged array 'a' in ascending order
+  for (i = 0; i < a.length; i++) {
+    for (j = i + 1; j < a.length; j++) {
+      // Compare the current element (a[i]) with the next element (a[j])
+      if (a[i] > a[j]) {
+        // Swap the elements if they are in the wrong order
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+      }
+    }
+  }
+
+  // Return the sorted merged array 'a'
+  return a;
+}
+
+// Call the mergeSortdArray function with arr1 and arr2 as arguments and print the result
+console.log(mergeSortdArray(arr1, arr2)); // [1, 2, 3, 4, 5,6, 7, 8, 9, 9,20]
+```
+
 ---
 
 ## 8. Product Class
